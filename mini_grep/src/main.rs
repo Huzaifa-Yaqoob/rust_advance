@@ -2,9 +2,9 @@ use std::env;
 use mini_grep::Config;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let args = env::args();
 
-    let conf = match Config::new(&args) {
+    let conf = match Config::new(args) {
         Ok(conf) => conf,
         Err(e) => {
             eprintln!("Problem parsing arguments: {}", e);
